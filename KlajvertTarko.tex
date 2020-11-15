@@ -1,0 +1,327 @@
+\documentclass[addpoints,11pt]{exam}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color,graphicx}
+\usepackage{multicol}
+\usepackage{MnSymbol}
+
+
+\definecolor{codegreen}{rgb}{0,0,0}
+\definecolor{codegray}{rgb}{0,0,0}
+\definecolor{codepurple}{rgb}{0,0,0}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+
+\lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{black},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple},
+        basicstyle=\footnotesize,
+        breakeatwhitespace=false,
+        breaklines=true,
+        captionpos=b,
+        keepspaces=true,
+        numbers=left,
+        numbersep=5pt,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        tabsize=2
+}
+\lstset{style=mystyle}
+\pagestyle{empty}
+
+\begin{document}
+ \boxedpoints
+ \pointname{~punti}
+\begin{center}
+    \fbox{\fbox{\parbox{5.5in}{\centering 
+    Programmazione Procedurale con Laboratorio - Klajvert Tarko}}}
+\end{center}
+
+\vspace{5mm}
+
+\noindent\makebox[\textwidth]{Nome e Cognome: \rule{8cm}{.1pt} \hspace{1cm} Matricola \rule{5cm}{.1pt}}
+
+\begin{questions}
+\question[4]
+Scrive il valore finale delle variabili \emph{mean}, \emph{mean2}, e \emph{mod}, ed il loro tipo.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int sum = 10, count = 2;
+double mean = sum / count;
+
+double mean2 = mean / sum;
+int mod = sum % count;
+
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{70pt}
+\end{minipage}
+
+\question[5]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int i=0;
+int j=0;
+int k=0;
+
+for(i=1; i<=7; i++){
+    for(j=1; j<=i; ++j)
+        printf("%d",j);
+    
+    for(k=7-i; k>=1; k--)
+        printf("*");
+        
+    printf("\n");
+}
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{140pt}
+\end{minipage}
+
+\question[2]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int a = 20;
+int b = 10;
+int c = 15;
+int d = 5;
+int e;
+ 
+e = (a + b) * c / d; 
+printf("Value of (a + b) * c / d is : %d\n",  e );
+
+e = ((a + b) * c) / d; 
+printf("Value of ((a + b) * c) / d is  : %d\n" ,  e );
+
+e = (a + b) * (c / d); 
+printf("Value of (a + b) * (c / d) is  : %d\n",  e );
+
+e = a + (b * c) / d;  
+printf("Il valore di a + (b * c) / d is  : %d\n" ,  e );
+  
+return 0;
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{310pt}
+\end{minipage}
+
+
+
+\question[4]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+
+int main(void) {
+     int n=5, i, p, s, k=3;
+     s = 0;
+     p = 1;
+    for (i=1; i<=n; i++) {
+        p = p*k;
+        s = s+p;
+    }
+    printf("%d\n", s);
+    return(0);
+}
+
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{100pt}
+\end{minipage}
+
+\question[4]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+
+int fibonacci(int i) {
+
+   if(i == 0) {
+      return 0;
+   }
+   if(i == 1) {
+      return 1;
+   }
+   return fibonacci(i-1) + fibonacci(i-2);
+}
+int  main() {
+   int i;
+   for (i = 0; i < 10; i++) {
+      printf("%d\t\n", fibonacci(i));
+   }
+   return 0;
+}
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{150pt}
+\end{minipage}
+
+\question[2]
+Scrivere cosa stampa il seguente programma e indicare dove g è declarata come variablie locale e dove globale.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int g = 20;
+int main () {
+  int g = 10;
+  printf ("value of g = %d\n",  g);
+ 
+  return 0;
+}
+
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{70pt}
+\end{minipage}
+
+\newpage
+\question[4]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int a = 20;
+ 
+int main () {
+  int a = 15;
+  int b = 14;
+  int c = 0;
+  printf ("il valore di a in main() = %d\n",  a);
+  c = sum( a, b);
+  printf ("il valore di c in main() = %d\n",  c);
+  return 0;
+}
+int sum(int a, int b) {
+   printf ("il valore di a in sum() = %d\n",  a);
+   printf ("il valore di b in sum() = %d\n",  b);
+   return a + b;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{150pt}
+\end{minipage}
+
+\question[3]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int main (){
+  int a, b;
+  a = b = 4;
+  b = a++;
+  printf ("%d %d %d %d", a++, --b, ++a, b--);
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{70pt}
+\end{minipage}
+
+\question[3]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int main (){
+  int a[4] = { 25, 16 };
+  printf ("%d %d", a[0] & a[1], a[1] | a[2]);
+
+}
+  
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{60pt}
+\end{minipage}
+
+\question[4]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int main (){
+  static int num = 8;
+  printf ("%d", num = num - 2);
+  if (num != 0)
+    main ();
+}
+  
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{60pt}
+\end{minipage}
+
+\question[4]
+Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{lstlisting}[language=C]
+int main() {
+  int m = -10, n = 20;
+  n = (m < 0) ? 0 : 1;
+  printf("%d %d", m, n);
+}
+  
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+       \makeemptybox{60pt}
+\end{minipage}
+
+
+
+
+
+\begin{center}
+\vspace*{\stretch{}}
+True or False
+\vspace*{\stretch{}}
+\end{center}
+
+\question[2]
+Only character or integer can be used in switch statement.\space\space\space\space\space\space\space\space True || False 
+
+\question[2]
+The return type of \emph{malloc} function is void.  \space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space  True || False 
+
+\question[2]
+#define is known as \emph{preprocessor} compiler directive.  \space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space  True || False 
+
+\question[2]
+\emph{sizeof( )} is a function that returns the size of a variable.  \space\space\space\space\space\space\space\space\space\space\space True || False
+
+\question[2]
+\emph{continue} keyword skip one iteration of loop.  \space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space  True || False 
+
+\question[2]
+A do-while loop is used to ensure that the statements within \\ the loop are executed at least twice.  \space\space\space\space\space\space\space\space\space\space\spacespace\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\spacespace\space\space\space\space\space\space\space\space\space\space\space\space\space\space True || False
+
+\end{questions}
+
+\end{document}
